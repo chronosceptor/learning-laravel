@@ -13,9 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'home.index');
+// Route::get('/', function () {
+//     return view('home.index', []);
+// })->name('home.index');
+Route::view('/', 'home.index')->name('home.index');
 
-Route::view('/contact', 'home.contact');
+
+// Route::get('/contact', function () {
+//     return view('home.contact', []);
+// })->name('home.contact');
+Route::view('/contact', 'home.contact')->name('home.contact');
+
 
 Route::get('/posts/{id}', function ($id) {
     $posts = [

@@ -5,13 +5,9 @@
 @section('content')
 
     @forelse ($posts as $key => $post)
-        <div>
-            <a href="./{{ $key }}">{{ $post['title'] }}</a>
-        </div>
+        @include('posts.partials.post')
     @empty
-
         No posts found!
-
     @endforelse
 
 @endsection

@@ -90,7 +90,7 @@ Route::prefix('/fun')->name('fun.')->group( function() use($posts) {
         return response()->json($posts);
     })->name('json');
 
-    Route::get('/download', function() use($posts) {
+    Route::get('/download', function() {
         return response()->download("robots.txt");
     })->name('download');
 

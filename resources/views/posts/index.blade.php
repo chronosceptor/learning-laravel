@@ -3,9 +3,15 @@
 @section('title', 'Blog Posts')
 
 @section('content')
-    @foreach ($posts as $key => $post)
+
+    @forelse ($posts as $key => $post)
         <div>
             <a href="./{{ $key }}">{{ $post['title'] }}</a>
         </div>
-    @endforeach
+    @empty
+
+        No posts found!
+
+    @endforelse
+
 @endsection

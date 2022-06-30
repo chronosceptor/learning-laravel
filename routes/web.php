@@ -38,6 +38,11 @@ $posts = [
         'content' => 'This is a short intro to PHP',
         'is_new' => false
     ],
+    3 => [
+        'title' => 'Intro to Golang',
+        'content' => 'This is a short intro to Golang',
+        'is_new' => false
+    ],
 ];
 
 
@@ -55,3 +60,35 @@ Route::get('/posts/{id}', function ($id) use ($posts) {
 Route::get('/recent-posts/{days_ago?}', function ($daysAgo = 20) {
     return "Posts from " . $daysAgo;
 })->name('posts.recent.index');
+
+Route::get('/fun/responses', function() use($posts){
+    return response($posts, 201)
+        ->header('Content-Type', 'application/json')
+        ->cookie('MY_COOKIE','Chronosceptor', 3600);
+ });
+
+
+Route::get('/fun/redirect', function() {
+    return redirect('contact');
+});
+
+Route::get('/fun/named-redirect', function() {
+    return redirect()->route('posts.show', ['id' => 1]);
+});
+
+Route::get('/fun/away', function() {
+    return redirect()->away('https://chronosceptor.com');
+});
+
+Route::get('/fun/back', function() {
+    return back();
+});
+
+Route::get('/fun/json', function() use($posts) {
+    return response()->json($posts);
+});
+
+// response download file
+Route::get('/fun/download', function() use($posts) {
+    return response()->download("robots.txt");
+});

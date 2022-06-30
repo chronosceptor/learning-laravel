@@ -10,4 +10,7 @@
         No posts found!
     @endforelse
 
+    {{--
+        @each('posts.partials.post', $posts, 'post')
+    --}}
 @endsection

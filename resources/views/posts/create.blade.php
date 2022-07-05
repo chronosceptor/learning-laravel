@@ -8,7 +8,7 @@
     @csrf
     <div>
         <label>Title</label><br>
-        <input type="text" name="title">
+        <input type="text" name="title" value="{{ old('title') }}">
         @error('title')
             <div>
                 {{ $message }}
@@ -17,7 +17,7 @@
     </div>
     <div>
         <label>Content</label><br>
-        <textarea name="content"></textarea>
+        <textarea name="content">{{ old('content') }}</textarea>
         @error('content')
             <div>
                 {{ $message }}

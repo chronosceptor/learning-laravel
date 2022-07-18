@@ -6,35 +6,7 @@
 
 <form action="{{ route('posts.store') }}" method="POST">
     @csrf
-    <div>
-        <label>Title</label><br>
-        <input type="text" name="title" value="{{ old('title') }}">
-        @error('title')
-            <div>
-                {{ $message }}
-            </div>
-        @enderror
-    </div>
-    <div>
-        <label>Content</label><br>
-        <textarea name="content">{{ old('content') }}</textarea>
-        @error('content')
-            <div>
-                {{ $message }}
-            </div>
-        @enderror
-    </div>
-
-    @if($errors->any())
-        <div>
-            <ul>
-                @foreach( $errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
+    @include('posts.partials.form')
     <div>
         <input type="submit" value="Create">
     </div>

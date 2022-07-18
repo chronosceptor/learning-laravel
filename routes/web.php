@@ -34,7 +34,8 @@ Route::get('/contact', [HomeController::class, 'contact'])
 
 Route::get('/single', AboutController::class);
 
-Route::resource('posts', PostsController::class);
+Route::resource('posts', PostsController::class)
+    ->only(['index','show','create','store','edit','update']);
 
 
 

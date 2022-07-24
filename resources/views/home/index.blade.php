@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <div class="t-bg-purple-500 t-h-32 t-w-32">
+    <div class="t-bg-red-500">
         <h1>hola desde el index test</h1>
     </div>
 

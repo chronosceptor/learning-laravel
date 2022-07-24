@@ -3,5 +3,9 @@
 @section('title','Home Page')
 
 @section('content')
-    <h1>hola desde el index</h1>
+
+    <div class="t-bg-purple-500 t-h-32 t-w-32">
+        <h1>hola desde el index test</h1>
+    </div>
+
 @endsection
